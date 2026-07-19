@@ -6,7 +6,6 @@ from datetime import datetime
 def validation_transaction(row, line_number):
     # Example validation logic
     "returns error message if validation fails"
-    "empty if validation passes"
     errors = []
 
     #check for missing values
@@ -38,7 +37,6 @@ def validation_transaction(row, line_number):
     return errors
 
 def validate_csv(filepath):
-    "    """
     "Reads a CSV file and validates every transaction row."
     "Returns valid rows and a list of all errors found."
     valid_rows = []
@@ -66,7 +64,7 @@ def print_report(valid_rows, all_errors):
      """
     Prints a clean validation report to the terminal.
     """
-     print("n" + "="*50)
+     print("\n" + "="*50)
      print("Validation Report")
      print("="*50)
 
@@ -90,7 +88,7 @@ def main():
     filepath = "transactions.csv"
     print(f"Validating CSV file: {filepath}")
 
-    valid_rows, all_errors = validate_csv("/Users/anupamaak/transactions.csv")
+    valid_rows, all_errors = validate_csv(filepath)
     print_report(valid_rows, all_errors)
 
 if __name__ == "__main__":
